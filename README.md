@@ -165,9 +165,6 @@ Create JSON files in `data/scenarios/`:
 
 The FastAPI backend provides automatic API documentation at `/docs` when running in development mode.
 
-## Troubleshooting
-
-### Common Issues
 
 **Backend not starting:**
 

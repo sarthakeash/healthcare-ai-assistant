@@ -31,7 +31,7 @@ class AnalysisPipelineService:
         ])
         return prompt | self.llm.with_structured_output(output_schema)
 
-    def _aggregate_results(self, parallel_output: Dict[str, Any], attempt_id: str, past_feedback: List[str]) -> FeedbackAnalysis:
+    def _aggregate_results(self, parallel_output: Dict[str, Any], attempt_id: str, past_feedback_exists:bool) -> FeedbackAnalysis:
         medical = parallel_output['medical']
         clarity = parallel_output['clarity']
         empathy = parallel_output['empathy']
@@ -54,7 +54,7 @@ class AnalysisPipelineService:
         if strengths:
             general_feedback += f"Your key strengths were in {', '.join(strengths)}. "
 
-        if past_feedback:
+        if past_feedback_exists:
             general_feedback += "Considering your past performance, it's great to see you're applying feedback effectively. Keep up the great work. "
         else:
             general_feedback += "This is a great starting point. "
@@ -72,18 +72,22 @@ class AnalysisPipelineService:
             general_feedback=general_feedback
         )
 
-    def analyze_response(self, attempt_id: str, scenario: Scenario, user_response: str, user_id: str) -> FeedbackAnalysis:
-        past_feedback_list = self.storage_service.get_recent_feedback_for_user(
-            user_id)
+    def get_rag_context(self, user_id: str):
+        past_feedback_list = self.storage_service.get_recent_feedback_for_user(user_id)
         rag_context = ""
         if past_feedback_list:
             feedback_points = "\n".join(f"- {fb}" for fb in past_feedback_list)
-            rag_context = f"""
-**IMPORTANT CONTEXT**: This user has received the following feedback on previous attempts. Pay close attention to see if they have improved in these areas.
----
-{feedback_points}
----
-"""
+            rag_context = (
+                "**IMPORTANT CONTEXT**: This user has received the following feedback on previous attempts. "
+                "Pay close attention to see if they have improved in these areas.\n"
+                "---\n"
+                f"{feedback_points}\n"
+                "---\n"
+            )
+        return rag_context
+    
+    def analyze_response(self, attempt_id: str, scenario: Scenario, user_response: str, user_id: str) -> FeedbackAnalysis:
+        rag_context=self.get_rag_context(user_id)
         base_user_prompt = """
             Scenario Context: {context}
             Key Points to Cover: {key_points}
@@ -126,7 +130,7 @@ class AnalysisPipelineService:
         )
 
         full_pipeline = parallel_chains | (
-            lambda x: self._aggregate_results(x, attempt_id, past_feedback_list))
+            lambda x: self._aggregate_results(x, attempt_id, rag_context !=""))
 
         final_feedback = full_pipeline.invoke({
             "context": scenario.context,
