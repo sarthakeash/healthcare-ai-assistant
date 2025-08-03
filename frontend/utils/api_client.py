@@ -27,13 +27,14 @@ class APIClient:
             st.error(f"Error fetching scenario: {e}")
             return None
     
-    def submit_practice(self, scenario_id: str, user_response: str, input_type: str = "text") -> Optional[Dict[str, Any]]:
+    def submit_practice(self, scenario_id: str, user_response: str, input_type: str = "text", user_id: str = "default_user") -> Optional[Dict[str, Any]]:
         """Submit a practice attempt"""
         try:
             data = {
                 "scenario_id": scenario_id,
                 "user_response": user_response,
-                "input_type": input_type
+                "input_type": input_type,
+                "user_id": user_id
             }
             response = requests.post(f"{self.api_v1}/practice/submit", json=data)
             response.raise_for_status()

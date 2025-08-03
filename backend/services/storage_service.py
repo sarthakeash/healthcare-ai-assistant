@@ -29,7 +29,8 @@ class StorageService:
                 scenario_id=attempt.scenario_id,
                 user_response=attempt.user_response,
                 input_type=attempt.input_type,
-                timestamp=attempt.timestamp
+                timestamp=attempt.timestamp,
+                user_id=attempt.user_id
             )
             db.add(db_attempt)
             db.commit()
@@ -189,5 +190,28 @@ class StorageService:
                     timestamp=feedback.timestamp
                 ))
             return result
+        finally:
+            db.close()
+
+    def get_recent_feedback_for_user(self, user_id: str, limit: int = 3) -> List[str]:
+        """Retrieves the general feedback from the most recent attempts for a given user."""
+        db = next(self.get_db())
+        try:
+            recent_attempts = db.query(PracticeAttemptDB.id).filter(
+                PracticeAttemptDB.user_id == user_id
+            ).order_by(PracticeAttemptDB.timestamp.desc()).limit(limit).all()
+
+            if not recent_attempts:
+                return []
+            print(recent_attempts)
+            attempt_ids = [attempt.id for attempt in recent_attempts]
+            feedbacks = db.query(FeedbackAnalysisDB.general_feedback).filter(
+                FeedbackAnalysisDB.attempt_id.in_(attempt_ids)
+            ).all()
+
+            return [fb.general_feedback for fb in feedbacks]
+        except Exception as e:
+            print(f"Error retrieving past feedback for user {user_id}: {e}")
+            return []
         finally:
             db.close()
