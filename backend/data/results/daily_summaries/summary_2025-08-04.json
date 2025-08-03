@@ -1,7 +1,7 @@
 {
   "date": "2025-08-04",
-  "total_attempts": 11,
-  "average_score": 4.23,
+  "total_attempts": 15,
+  "average_score": 3.65,
   "attempts": [
     {
       "attempt_id": "attempt_20250804002956248377",
@@ -68,10 +68,34 @@
       "scenario_id": "scenario_003",
       "score": 4.75,
       "timestamp": "2025-08-04T00:40:14.472170"
+    },
+    {
+      "attempt_id": "attempt_20250804014420550276",
+      "scenario_id": "scenario_001",
+      "score": 0.0,
+      "timestamp": "2025-08-04T01:44:30.061228"
+    },
+    {
+      "attempt_id": "attempt_20250804020143425264",
+      "scenario_id": "scenario_001",
+      "score": 0.0,
+      "timestamp": "2025-08-04T02:01:49.548646"
+    },
+    {
+      "attempt_id": "attempt_20250804022752070093",
+      "scenario_id": "scenario_001",
+      "score": 0.5,
+      "timestamp": "2025-08-04T02:28:01.684588"
+    },
+    {
+      "attempt_id": "attempt_20250804022919346465",
+      "scenario_id": "scenario_001",
+      "score": 7.75,
+      "timestamp": "2025-08-04T02:29:34.858187"
     }
   ],
   "scenarios_practiced": {
-    "scenario_001": 6,
+    "scenario_001": 10,
     "scenario_002": 2,
     "scenario_003": 3
   }

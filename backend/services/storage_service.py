@@ -1,4 +1,3 @@
-# backend/services/storage_service.py
 import json
 import os
 from datetime import datetime
@@ -22,7 +21,6 @@ class StorageService:
     def _ensure_results_dir(self):
         """Ensure results directory exists with proper structure"""
         os.makedirs(self.results_dir, exist_ok=True)
-        # Create subdirectories for better organization
         os.makedirs(os.path.join(self.results_dir, "attempts"), exist_ok=True)
         os.makedirs(os.path.join(self.results_dir, "feedback"), exist_ok=True)
         os.makedirs(os.path.join(self.results_dir, "daily_summaries"), exist_ok=True)

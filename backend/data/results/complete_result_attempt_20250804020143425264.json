@@ -1,0 +1,86 @@
+{
+  "attempt": {
+    "id": "attempt_20250804020143425264",
+    "scenario_id": "scenario_001",
+    "user_response": "fadsfas",
+    "user_id": "default_user",
+    "input_type": "text",
+    "timestamp": "2025-08-04 02:01:43.425306"
+  },
+  "feedback": {
+    "attempt_id": "attempt_20250804020143425264",
+    "scenario_id": "scenario_001",
+    "timestamp": "2025-08-04T02:01:49.544437",
+    "overall_score": 0.0,
+    "general_feedback": "Overall Score: 0.0/10. Considering your past performance, it's great to see you're applying feedback effectively. Keep up the great work. Continue practicing to refine your skills further.",
+    "detailed_scores": {
+      "medical_accuracy": {
+        "score": 0,
+        "explanation": "The healthcare professional's response 'fadsfas' is entirely nonsensical and contains no medical or professional content whatsoever. It does not address any of the key points of the scenario, nor does it demonstrate any understanding of patient intake procedures, communication, or safety protocols. There is no medical accuracy to evaluate as no medical information was provided.",
+        "strengths": [],
+        "improvements": [
+          "Provide a warm and professional greeting.",
+          "Introduce oneself and one's role.",
+          "Acknowledge the patient's nervousness and attempt to make them comfortable.",
+          "Speak slowly and clearly, especially given the language barrier.",
+          "Confirm the patient's full name and date of birth for proper identification (a critical safety step).",
+          "Ask about the reason for their visit in a clear and open-ended manner.",
+          "Demonstrate patience and active listening, especially with a language barrier.",
+          "Initiate basic intake questions such as allergies and current medications, even if briefly, as part of initial safety screening.",
+          "Ensure all communication is professional and relevant to the clinical setting."
+        ],
+        "examples": []
+      },
+      "communication_clarity": {
+        "score": 0,
+        "explanation": "The provided response \"fadsfas\" is not a coherent or understandable message. It contains no recognizable words or structure, making it impossible for any patient, especially one with limited health literacy or a language barrier, to comprehend. It fails to meet any standard of effective communication.",
+        "strengths": [],
+        "improvements": [
+          "Construct a clear, warm, and simple greeting.",
+          "Use actual words and complete sentences.",
+          "Address the patient directly and empathetically.",
+          "Focus on making the patient feel comfortable and understood.",
+          "Gather basic information using simple, direct questions."
+        ],
+        "examples": []
+      },
+      "empathy_tone": {
+        "score": 0,
+        "explanation": "The provided response \"fadsfas\" is nonsensical and does not constitute a coherent or professional communication. As such, it completely fails to address the scenario, demonstrate any emotional intelligence, empathy, or adhere to any principles of therapeutic healthcare communication. It is inherently dismissive and insensitive due to its lack of any meaningful content.",
+        "strengths": [],
+        "improvements": [
+          "Initiate a warm and clear greeting.",
+          "Introduce oneself and one's role.",
+          "Actively recognize and validate the patient's apparent nervousness.",
+          "Consciously adjust speech pace to be slow and clear, especially given the language barrier.",
+          "Patiently confirm the patient's name and other basic necessary details.",
+          "Gently inquire about the reason for the visit, ensuring the patient feels no pressure.",
+          "Demonstrate profound patience and understanding regarding the language barrier, offering support or alternative communication methods if needed.",
+          "Establish a patient-centered approach from the outset, prioritizing their comfort and understanding.",
+          "Begin building trust and rapport through respectful and compassionate interaction.",
+          "Show genuine care and compassion, making the patient feel safe and heard."
+        ],
+        "examples": []
+      },
+      "completeness": {
+        "score": 0,
+        "explanation": "The provided response \"fadsfas\" is nonsensical and does not address any of the essential elements required for a patient interaction. It fails to cover any scenario key points, perform patient identification, ask critical safety questions, explore the reason for the visit, or communicate next steps.",
+        "strengths": [],
+        "improvements": [
+          "Provide a warm greeting and introduction.",
+          "Acknowledge patient's nervousness and make them feel comfortable.",
+          "Speak slowly and clearly, showing patience with the language barrier.",
+          "Confirm patient's name and basic demographic details.",
+          "Thoroughly explore the reason for the visit.",
+          "Ask critical safety questions (e.g., allergies, current medications, relevant medical history).",
+          "Clearly communicate the next steps in the patient's care."
+        ],
+        "examples": []
+      }
+    }
+  },
+  "metadata": {
+    "created_at": "2025-08-04T02:01:49.549096",
+    "version": "1.0"
+  }
+}

@@ -62,3 +62,21 @@ class APIClient:
         except requests.exceptions.RequestException as e:
             st.error(f"Error fetching attempts: {e}")
             return []
+
+    def submit_practice_voice(self, scenario_id: str, user_id: str, audio_bytes: bytes) -> Optional[Dict[str, Any]]:
+        """Submit a voice practice attempt as a file upload."""
+        try:
+            # We send form data, not JSON, for file uploads
+            files = {'audio_file': ('recording.wav', audio_bytes, 'audio/wav')}
+            data = {'scenario_id': scenario_id, 'user_id': user_id}
+
+            response = requests.post(
+                f"{self.api_v1}/practice/submit_voice",
+                files=files,
+                data=data
+            )
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            st.error(f"Error submitting voice practice: {e}")
+            return None

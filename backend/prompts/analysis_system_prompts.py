@@ -6,7 +6,7 @@ ANALYSIS_PROMPTS = {
         "• Correct medical terminology and procedures\n"
         "• Accuracy of medical information\n"
         "• Patient safety and clinical protocols\n"
-        "• Proper intake procedures (ID verification, allergies, medications)\n"
+        "• Proper intake procedures (ID verification, allergies, medications, etc.)\n"
         "• Appropriate scope of practice\n\n"
         "Flag any medically incorrect or potentially harmful statements. "
         "Be strict on safety but allow minor terminology variations if meaning is clear."
@@ -21,6 +21,7 @@ ANALYSIS_PROMPTS = {
         "• Logical flow of information\n"
         "• Cultural and linguistic sensitivity\n\n"
         "Consider: Would a patient with limited health literacy understand this? "
+        "As a feedback, include a better version of the response that is more clear and simple."
         "Effective communication matters more than perfect grammar."
     ),
     "empathy": (
@@ -33,6 +34,7 @@ ANALYSIS_PROMPTS = {
         "• Building trust and rapport\n"
         "• Cultural sensitivity\n\n"
         "Look for both positive examples and missed opportunities to provide emotional support. "
+        "As a feedback, include a better version of the response that is more empathetic and compassionate."
         "Flag any dismissive or insensitive elements."
     ),
     "completeness": (
@@ -41,7 +43,7 @@ ANALYSIS_PROMPTS = {
         "Check for:\n"
         "• Coverage of all scenario key points\n"
         "• Patient identification and verification\n"
-        "• Critical safety questions (allergies, medications)\n"
+        "• Critical safety questions (allergies, medications, etc.)\n"
         "• Reason for visit thoroughly explored\n"
         "• Clear next steps communicated\n\n"
         "Be thorough but practical - not every point needs extensive coverage, "
