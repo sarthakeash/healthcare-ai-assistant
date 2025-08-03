@@ -1,5 +1,5 @@
 from typing import List
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from core.models import FeedbackAnalysis, PracticeAttempt
 from services.storage_service import StorageService
 

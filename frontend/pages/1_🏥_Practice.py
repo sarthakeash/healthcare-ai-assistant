@@ -8,6 +8,10 @@ st.title("🏥 Practice Healthcare Communication")
 
 api = APIClient()
 
+# Ensure attempt_history is initialized in session state
+if 'attempt_history' not in st.session_state:
+    st.session_state['attempt_history'] = []
+
 # Scenario selection
 st.markdown("### Select a Practice Scenario")
 scenarios = api.get_scenarios()
@@ -45,38 +49,42 @@ if scenario_id:
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             submit_clicked = st.button(
-                "🔍 Analyze Response", type="primary", disabled=not user_response.strip())
+                "🔍 Analyze Response", type="primary")
 
-        if submit_clicked and user_response.strip():
-            with st.spinner("🤖 AI is analyzing your response... This may take a moment."):
-                feedback = api.submit_practice(
-                    scenario_id=scenario_id,
-                    user_response=user_response,
-                    input_type="text"
-                )
+        if submit_clicked:
+            if not user_response.strip():
+                st.toast(
+                    "Please enter your response before submitting.", icon="⚠️")
+            else:
+                with st.spinner("🤖 AI is analyzing your response... This may take a moment."):
+                    feedback = api.submit_practice(
+                        scenario_id=scenario_id,
+                        user_response=user_response,
+                        input_type="text"
+                    )
 
-                if feedback:
-                    # Store in session state
-                    st.session_state.attempt_history.append({
-                        'timestamp': datetime.now(),
-                        'scenario': scenario['title'],
-                        'scenario_id': scenario_id,
-                        'user_response': user_response,
-                        'feedback': feedback
-                    })
+                    if feedback:
+                        # Store in session state
+                        st.session_state.attempt_history.append({
+                            'timestamp': datetime.now(),
+                            'scenario': scenario['title'],
+                            'scenario_id': scenario_id,
+                            'user_response': user_response,
+                            'feedback': feedback
+                        })
 
-                    st.markdown("---")
-                    st.markdown("### 📊 AI Feedback Analysis")
+                        st.markdown("---")
+                        st.markdown("### 📊 AI Feedback Analysis")
 
-                    # Display feedback
-                    display_feedback(feedback)
+                        # Display feedback
+                        display_feedback(feedback)
 
-                    # Option to try another scenario
-                    st.markdown("---")
-                    if st.button("🔄 Try Another Scenario"):
-                        st.rerun()
-                else:
-                    st.error("Failed to get feedback. Please try again.")
+                        # Option to try another scenario
+                        st.markdown("---")
+                        if st.button("🔄 Try Another Scenario"):
+                            st.rerun()
+                    else:
+                        st.error("Failed to get feedback. Please try again.")
     else:
         st.error("Failed to load scenario details.")
 
@@ -96,14 +104,6 @@ with st.sidebar:
     - Ask appropriate questions
     
     **Remember:**
-    - Avoid medical jargon
     - Be patient and reassuring
     - Maintain professional boundaries
     """)
-
-    if st.session_state.attempt_history:
-        st.markdown("### 📈 Recent Attempts")
-        for i, attempt in enumerate(st.session_state.attempt_history[-3:], 1):
-            score = attempt['feedback']['overall_score']
-            st.metric(
-                f"Attempt {len(st.session_state.attempt_history) - 3 + i}", f"{score:.1f}/100")

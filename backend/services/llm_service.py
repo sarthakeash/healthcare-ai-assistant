@@ -7,12 +7,12 @@ from prompts.analysis_prompts import get_analysis_prompt
 
 class LLMService:
     def __init__(self):
-        self.client = OpenAI(api_key=settings.openai_api_key)
+        self.client = OpenAI(api_key=settings.gemini_api_key,base_url=settings.gemini_base_url)
     
     def analyze_response(self, scenario: Scenario, user_response: str) -> Dict[str, Any]:
         """Analyze user response using OpenAI"""
         prompt = get_analysis_prompt(scenario, user_response)
-        
+        print(settings.gemini_api_key)
         try:
             response = self.client.chat.completions.create(
                 model=settings.llm_model,

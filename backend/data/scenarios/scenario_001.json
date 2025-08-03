@@ -1,0 +1,17 @@
+{
+    "id": "scenario_001",
+    "title": "Greeting and Initial Assessment",
+    "description": "First appointment with a nervous patient",
+    "context": "A new patient arrives for their first appointment. They seem nervous and are speaking very quickly in broken English. Start the conversation, make them feel comfortable, and gather basic information about why they're here today.",
+    "difficulty": "beginner",
+    "medical_area": "General Practice",
+    "patient_type": "New patient, ESL, anxious",
+    "key_points": [
+        "Warm greeting and introduction",
+        "Acknowledge patient's nervousness",
+        "Speak slowly and clearly",
+        "Confirm patient's name and basic details",
+        "Ask about reason for visit",
+        "Show patience with language barrier"
+    ]
+}
