@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.api.routes import practice, scenarios, results
-from backend.core.config import settings
+from api.routes import practice, scenarios, results
+from core.config import settings
 
 app = FastAPI(
     title=settings.project_name,

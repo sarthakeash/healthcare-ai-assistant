@@ -1,5 +1,5 @@
 from typing import Dict
-from backend.core.models import Scenario
+from core.models import Scenario
 
 def get_analysis_prompt(scenario: Scenario, user_response: str) -> Dict[str, str]:
     system_prompt = """You are an expert healthcare communication coach with 20+ years of experience training medical professionals. 

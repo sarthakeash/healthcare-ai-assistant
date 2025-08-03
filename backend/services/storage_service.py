@@ -2,8 +2,8 @@ import json
 from typing import List, Optional
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from backend.core.config import settings
-from backend.core.models import (
+from core.config import settings
+from core.models import (
     Base, PracticeAttempt, FeedbackAnalysis, PracticeAttemptDB, 
     FeedbackAnalysisDB, ScoreDetail
 )

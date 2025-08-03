@@ -1,7 +1,7 @@
 from typing import List
 from fastapi import APIRouter, HTTPException
-from backend.core.models import Scenario
-from backend.services.scenario_service import ScenarioService
+from core.models import Scenario
+from services.scenario_service import ScenarioService
 
 router = APIRouter()
 scenario_service = ScenarioService()

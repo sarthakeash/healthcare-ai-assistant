@@ -1,7 +1,7 @@
 from typing import List
 from fastapi import APIRouter
-from backend.core.models import FeedbackAnalysis, PracticeAttempt
-from backend.services.storage_service import StorageService
+from core.models import FeedbackAnalysis, PracticeAttempt
+from services.storage_service import StorageService
 
 router = APIRouter()
 storage_service = StorageService()

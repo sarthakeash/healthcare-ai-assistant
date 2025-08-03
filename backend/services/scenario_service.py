@@ -1,8 +1,8 @@
 import json
 import os
 from typing import List, Optional
-from backend.core.config import settings
-from backend.core.models import Scenario
+from core.config import settings
+from core.models import Scenario
 
 class ScenarioService:
     def __init__(self):

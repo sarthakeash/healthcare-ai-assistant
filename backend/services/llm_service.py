@@ -1,9 +1,9 @@
 import json
 from typing import Dict, Any
 from openai import OpenAI
-from backend.core.config import settings
-from backend.core.models import Scenario, FeedbackAnalysis, ScoreDetail
-from backend.prompts.analysis_prompts import get_analysis_prompt
+from core.config import settings
+from core.models import Scenario, FeedbackAnalysis, ScoreDetail
+from prompts.analysis_prompts import get_analysis_prompt
 
 class LLMService:
     def __init__(self):

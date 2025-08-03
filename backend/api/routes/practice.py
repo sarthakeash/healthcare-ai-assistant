@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException
-from backend.core.models import PracticeAttempt, FeedbackAnalysis
-from backend.services.llm_service import LLMService
-from backend.services.scenario_service import ScenarioService
-from backend.services.storage_service import StorageService
+from core.models import PracticeAttempt, FeedbackAnalysis
+from services.llm_service import LLMService
+from services.scenario_service import ScenarioService
+from services.storage_service import StorageService
 
 router = APIRouter()
 llm_service = LLMService()
