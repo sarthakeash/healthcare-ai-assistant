@@ -1,0 +1,8 @@
+{
+  "id": "attempt_20250804003359602258",
+  "scenario_id": "scenario_001",
+  "user_response": "Hello! Welcome to our clinic. I'm Sarah, one of the nurses here.\n\nI can see you're a bit nervous. First visits can be stressful.\n\nCan you tell me your name? And your birthdate?\n\nWhat brings you here today? Take your time.\n\nSorry, could you repeat that? I didn't quite catch what you said.",
+  "user_id": "default_user",
+  "input_type": "text",
+  "timestamp": "2025-08-04 00:33:59.602316"
+}

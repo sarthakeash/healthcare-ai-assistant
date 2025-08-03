@@ -1,0 +1,78 @@
+{
+  "date": "2025-08-04",
+  "total_attempts": 11,
+  "average_score": 4.23,
+  "attempts": [
+    {
+      "attempt_id": "attempt_20250804002956248377",
+      "scenario_id": "scenario_001",
+      "score": 9.0,
+      "timestamp": "2025-08-04T00:30:07.858096"
+    },
+    {
+      "attempt_id": "attempt_20250804003203603915",
+      "scenario_id": "scenario_001",
+      "score": 0.25,
+      "timestamp": "2025-08-04T00:32:12.873289"
+    },
+    {
+      "attempt_id": "attempt_20250804003240051000",
+      "scenario_id": "scenario_001",
+      "score": 3.5,
+      "timestamp": "2025-08-04T00:32:55.672094"
+    },
+    {
+      "attempt_id": "attempt_20250804003317361922",
+      "scenario_id": "scenario_001",
+      "score": 3.5,
+      "timestamp": "2025-08-04T00:33:30.957315"
+    },
+    {
+      "attempt_id": "attempt_20250804003359602258",
+      "scenario_id": "scenario_001",
+      "score": 7.0,
+      "timestamp": "2025-08-04T00:34:11.479999"
+    },
+    {
+      "attempt_id": "attempt_20250804003435870997",
+      "scenario_id": "scenario_001",
+      "score": 7.75,
+      "timestamp": "2025-08-04T00:34:50.279410"
+    },
+    {
+      "attempt_id": "attempt_20250804003745835917",
+      "scenario_id": "scenario_002",
+      "score": 2.25,
+      "timestamp": "2025-08-04T00:37:57.280601"
+    },
+    {
+      "attempt_id": "attempt_20250804003817913664",
+      "scenario_id": "scenario_002",
+      "score": 5.5,
+      "timestamp": "2025-08-04T00:38:30.901409"
+    },
+    {
+      "attempt_id": "attempt_20250804003923064276",
+      "scenario_id": "scenario_003",
+      "score": 1.0,
+      "timestamp": "2025-08-04T00:39:33.905901"
+    },
+    {
+      "attempt_id": "attempt_20250804003938559169",
+      "scenario_id": "scenario_003",
+      "score": 2.0,
+      "timestamp": "2025-08-04T00:39:49.546438"
+    },
+    {
+      "attempt_id": "attempt_20250804004001855213",
+      "scenario_id": "scenario_003",
+      "score": 4.75,
+      "timestamp": "2025-08-04T00:40:14.472170"
+    }
+  ],
+  "scenarios_practiced": {
+    "scenario_001": 6,
+    "scenario_002": 2,
+    "scenario_003": 3
+  }
+}

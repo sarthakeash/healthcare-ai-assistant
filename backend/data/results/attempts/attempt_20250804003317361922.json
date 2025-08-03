@@ -1,0 +1,8 @@
+{
+  "id": "attempt_20250804003317361922",
+  "scenario_id": "scenario_001",
+  "user_response": "Hi there, I'm your nurse. \n\nYou seem nervous - don't worry, it's fine. Everything will be okay.\n\nWhat's your name? And when were you born?\n\nSo what brings you in today? Just tell me what's wrong and we'll get you sorted out.\n\nDo you understand what I'm saying?",
+  "user_id": "default_user",
+  "input_type": "text",
+  "timestamp": "2025-08-04 00:33:17.361954"
+}

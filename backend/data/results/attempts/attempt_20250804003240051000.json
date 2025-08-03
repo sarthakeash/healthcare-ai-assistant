@@ -1,0 +1,8 @@
+{
+  "id": "attempt_20250804003240051000",
+  "scenario_id": "scenario_001",
+  "user_response": "Good morning. I'm RN Johnson. I need to complete your intake assessment for our EMR system.\n\nPlease provide your full legal name and DOB for verification purposes. I also need to document your chief complaint and relevant PMH.\n\nI'll need your insurance information and a list of current medications including dosages.\n\nDo you have any drug allergies or contraindications I should note?",
+  "user_id": "default_user",
+  "input_type": "text",
+  "timestamp": "2025-08-04 00:32:40.051094"
+}
