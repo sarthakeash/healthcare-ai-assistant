@@ -1,0 +1,16 @@
+{
+    "id": "scenario_004",
+    "title": "Addressing Cardiac Medication Side Effect Concerns",
+    "description": "A patient recently started on a new cardiac medication is experiencing mild symptoms and is highly anxious, believing them to be severe side effects. Your task is to address their anxiety, clarify the nature of their symptoms, and provide accurate education about their medication.",
+    "context": "Mr. David Chen, a 62-year-old male, was recently prescribed a new beta-blocker for his newly diagnosed hypertension and stable angina. He presents for a follow-up, visibly anxious, stating he feels 'tired and a bit lightheaded' and is convinced these are dangerous side effects. He's considering stopping the medication. Your goal is to empathize with his concerns, gather more information about his symptoms, differentiate between expected common effects and concerning side effects, and reinforce the importance of adherence while providing reassurance.",
+    "difficulty": "intermediate",
+    "medical_area": "Cardiology",
+    "patient_type": "Anxious patient worried about medication side effects",
+    "key_points": [
+        "Acknowledge and validate the patient's anxiety and concerns.",
+        "Actively listen to the patient's description of their symptoms.",
+        "Differentiate between common, mild, and expected medication effects (e.g., fatigue with beta-blockers) versus concerning side effects requiring intervention.",
+        "Provide clear, concise, and empathetic education about the medication and its typical side effect profile.",
+        "Reassure the patient while emphasizing the importance of medication adherence and collaborative decision-making."
+    ]
+}
