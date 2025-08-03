@@ -1,0 +1,16 @@
+{
+      "id": "scenario_002",
+      "title": "Explaining a Common Procedure",
+      "description": "A patient needs to have blood drawn for tests. They mention they're afraid of needles and had a bad experience before. Explain the procedure, address their concerns, and get their consent.",
+      "context": "A patient requires a blood test. The patient expresses fear of needles and recounts a previous negative experience. You must explain the blood draw procedure in a reassuring way, address their concerns, and obtain informed consent before proceeding.",
+      "difficulty": "intermediate",
+      "medical_area": "Phlebotomy",
+      "patient_type": "Adult, needle-phobic",
+      "key_points": [
+            "Explain the blood draw procedure step by step",
+            "Acknowledge and validate the patient's fear",
+            "Describe measures to minimize discomfort",
+            "Discuss safety and hygiene protocols",
+            "Obtain informed consent before proceeding"
+      ]
+}

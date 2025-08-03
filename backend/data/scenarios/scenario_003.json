@@ -1,0 +1,16 @@
+{
+      "id": "scenario_003",
+      "title": "Discharge Instructions",
+      "description": "An elderly patient is being discharged after a minor procedure. Their adult daughter is with them. Explain the home care instructions, medications to take, and when to come back for a follow-up. Make sure both understand.",
+      "context": "An elderly patient is ready to go home after a minor outpatient procedure. Their adult daughter is present to help with care. You must explain home care instructions, review medications, and clarify when to return for follow-up. Ensure both the patient and daughter understand the instructions and have a chance to ask questions.",
+      "difficulty": "intermediate",
+      "medical_area": "Postoperative Care",
+      "patient_type": "Elderly patient with family support",
+      "key_points": [
+            "Explain home care steps clearly",
+            "Review all prescribed medications and dosages",
+            "Discuss signs and symptoms that require medical attention",
+            "Clarify follow-up appointment details",
+            "Check understanding with both patient and daughter"
+      ]
+}

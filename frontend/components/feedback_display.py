@@ -13,7 +13,7 @@ def display_feedback(feedback: Dict[str, Any]):
     
     # Overall score
     overall_score = feedback.get('overall_score', 0)
-    st.metric("Overall Score", f"{overall_score:.1f}/100", 
+    st.metric("Overall Score", f"{overall_score:.1f}/10", 
               delta=None, delta_color="normal")
     
     # Score breakdown chart
@@ -43,7 +43,7 @@ def display_feedback(feedback: Dict[str, Any]):
         polar=dict(
             radialaxis=dict(
                 visible=True,
-                range=[0, 100]
+                range=[0, 10]
             )),
         showlegend=False,
         title="Performance Breakdown"
@@ -60,7 +60,7 @@ def display_feedback(feedback: Dict[str, Any]):
     ]
     
     for category_name, category_data in categories_data:
-        with st.expander(f"📊 {category_name} - {category_data.get('score', 0):.1f}/100"):
+        with st.expander(f"📊 {category_name} - {category_data.get('score', 0):.1f}/10"):
             
             # Explanation
             st.markdown("**Analysis:**")
