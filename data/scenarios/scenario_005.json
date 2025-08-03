@@ -1,0 +1,19 @@
+{
+    "id": "scenario_005",
+    "title": "Pediatric Visit with Anxious Parent",
+    "description": "Reassuring a worried parent about their child's symptoms",
+    "context": "A mother has brought her 4-year-old child in because of a persistent cough that has lasted for 5 days. The mother is very worried, mentioning that she's read online that it could be pneumonia or something serious. The child appears generally well but has a mild cough. The mother is visibly anxious and asking lots of rapid-fire questions.",
+    "difficulty": "beginner",
+    "medical_area": "Pediatrics",
+    "patient_type": "Young child with concerned parent",
+    "key_points": [
+        "Address the parent's anxiety first",
+        "Examine the child while explaining your actions",
+        "Provide reassurance about the child's overall condition",
+        "Explain what you're looking for during examination",
+        "Discuss common vs. serious causes of cough in children",
+        "Give clear guidance on when to worry",
+        "Provide home care instructions",
+        "Address internet health information concerns"
+    ]
+}
