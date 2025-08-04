@@ -23,14 +23,14 @@ An AI-powered tool for healthcare professionals to practice patient communicatio
 git clone <your-repo-url>
 cd healthcare-communication-assistant
 
-# Create virtual environment
-python -m venv venv
+# Create virtual environment, make sure that python 3.11 is installed
+python3.11 -m venv .
 
 # Activate virtual environment
 # On macOS/Linux:
-source venv/bin/activate
+source bin/activate
 # On Windows:
-venv\Scripts\activate
+Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -40,6 +40,7 @@ pip install -r requirements.txt
 
 ```bash
 # Copy environment template
+cd backend
 cp .env.example .env
 
 # Edit .env file and add your Gemini API key

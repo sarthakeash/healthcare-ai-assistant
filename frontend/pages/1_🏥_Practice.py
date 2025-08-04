@@ -45,7 +45,7 @@ if not st.session_state.feedback:
     submit_text_clicked = st.button(
         "Analyze Text Response",
         type="primary",
-        disabled=st.session_state.is_submitting or not user_response_text.strip(),
+        disabled=st.session_state.is_submitting,
     )
 
     # --- Voice Input ---
@@ -71,7 +71,7 @@ if not st.session_state.feedback:
         )
 
     # --- Submission Logic ---
-    if submit_text_clicked:
+    if submit_text_clicked and user_response_text.strip():
         st.session_state.is_submitting = True
         with st.spinner("🤖 AI is analyzing your response..."):
             feedback = api.submit_practice(
