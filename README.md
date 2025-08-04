@@ -159,6 +159,32 @@ Create JSON files in `data/scenarios/`:
 }
 ```
 
+
+## Scenario Generation
+
+The platform includes an AI-powered scenario generation system that creates realistic healthcare communication scenarios automatically.
+
+### Using the Scenario Generator
+
+Generate new scenarios using the provided script:
+
+```bash
+python backend/scripts/generate_scenario.py --difficulty beginner --department "Emergency Medicine" --patient "An anxious parent with a child who has a fever"
+```
+
+**Parameters:**
+- `--difficulty`: Required. Choose from `beginner`, `intermediate`, or `advanced`
+- `--department`: Required. Medical department (e.g., "Pediatrics", "Oncology", "Emergency Medicine")
+- `--patient`: Required. Brief description of the patient type (e.g., "Elderly patient with hearing difficulties")
+
+**Example Commands:**
+```bash
+# Generate a beginner pediatric scenario
+python backend/scripts/generate_scenario.py --difficulty beginner --department "Pediatrics" --patient "A worried mother with a toddler who won't eat"
+```
+
+The script automatically assigns sequential scenario IDs and saves the generated scenarios to `backend/data/scenarios/` for immediate use in the training platform.
+
 ## Development
 
 ### API Development
