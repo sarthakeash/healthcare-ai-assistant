@@ -71,7 +71,10 @@ if not st.session_state.feedback:
         )
 
     # --- Submission Logic ---
-    if submit_text_clicked and user_response_text.strip():
+    if submit_text_clicked:
+        if not user_response_text.strip():
+            st.toast("Please type something before submitting")
+            st.stop()
         st.session_state.is_submitting = True
         with st.spinner("🤖 AI is analyzing your response..."):
             feedback = api.submit_practice(
