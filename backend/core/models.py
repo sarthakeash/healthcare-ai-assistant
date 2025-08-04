@@ -8,6 +8,15 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
+class ScenarioWeights(BaseModel):
+    """Model for scenario-specific weights"""
+    medical_accuracy: float = Field(ge=0, le=1, description="Weight for medical accuracy (0-1)")
+    communication_clarity: float = Field(ge=0, le=1, description="Weight for communication clarity (0-1)")
+    empathy_tone: float = Field(ge=0, le=1, description="Weight for empathy and tone (0-1)")
+    completeness: float = Field(ge=0, le=1, description="Weight for completeness (0-1)")
+    rationale: str = Field(description="Explanation for why these weights are appropriate for this scenario")
+
+
 class DifficultyLevel(str, Enum):
     BEGINNER = "beginner"
     INTERMEDIATE = "intermediate"
@@ -60,6 +69,13 @@ class CompletenessDetail(BaseModel):
     strengths: List[str] = Field(..., description="Strengths in completeness")
     improvements: List[str] = Field(...,
                                     description="Areas for improvement in completeness")
+
+
+class CombinedCommunicationAnalysis(BaseModel):
+    """Combined analysis for clarity, empathy, and completeness in a single API call"""
+    clarity: ClarityDetail = Field(description="Communication clarity analysis")
+    empathy: EmpathyDetail = Field(description="Empathy and tone analysis")
+    completeness: CompletenessDetail = Field(description="Completeness analysis")
 
 
 class Scenario(BaseModel):

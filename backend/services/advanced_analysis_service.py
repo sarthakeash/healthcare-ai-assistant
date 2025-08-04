@@ -7,26 +7,12 @@ from pydantic import BaseModel, Field
 from core.config import settings
 from core.models import (
     Scenario, FeedbackAnalysis, ScoreDetail,
-    MedicalAccuracyDetail, ClarityDetail, EmpathyDetail, CompletenessDetail
+    MedicalAccuracyDetail,ScenarioWeights,CombinedCommunicationAnalysis
 )
 from services.storage_service import StorageService
 from prompts.analysis_system_prompts import get_analysis_system_prompt
 
 
-class ScenarioWeights(BaseModel):
-    """Model for scenario-specific weights"""
-    medical_accuracy: float = Field(ge=0, le=1, description="Weight for medical accuracy (0-1)")
-    communication_clarity: float = Field(ge=0, le=1, description="Weight for communication clarity (0-1)")
-    empathy_tone: float = Field(ge=0, le=1, description="Weight for empathy and tone (0-1)")
-    completeness: float = Field(ge=0, le=1, description="Weight for completeness (0-1)")
-    rationale: str = Field(description="Explanation for why these weights are appropriate for this scenario")
-
-
-class CombinedCommunicationAnalysis(BaseModel):
-    """Combined analysis for clarity, empathy, and completeness in a single API call"""
-    clarity: ClarityDetail = Field(description="Communication clarity analysis")
-    empathy: EmpathyDetail = Field(description="Empathy and tone analysis")
-    completeness: CompletenessDetail = Field(description="Completeness analysis")
 
 class AnalysisPipelineService:
     def __init__(self):
