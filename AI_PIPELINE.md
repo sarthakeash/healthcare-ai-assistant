@@ -35,7 +35,7 @@ This AI pipeline is designed for a healthcare communication training platform th
 ## Key Design Principles
 
 ### 1. Cost-Optimized Architecture
-- **Reduced API calls from 4 to 2** (50% cost reduction)
+- **Reduced API calls** 
 - **Intelligent caching** of scenario weights to avoid redundant generation
 - **Parallel processing** for maximum efficiency
 
@@ -73,8 +73,8 @@ A cost-optimized chain that analyzes three dimensions in a single API call:
 - **Empathy**: Emotional intelligence, compassion, patient-centered approach
 - **Completeness**: Coverage of key points, safety questions, next steps
 
-### RAG-Enhanced Context System
-The pipeline incorporates a **Retrieval-Augmented Generation (RAG)** approach by:
+### Enhanced Context System
+The pipeline incorporates a approach by:
 - **Retrieving recent feedback** from the user's previous attempts
 - **Contextualizing analysis** with past improvement areas
 - **Tracking progress** over time to provide personalized feedback
@@ -84,9 +84,7 @@ This context is specifically added to the communication analysis chains (empathy
 ### Weighted Aggregation
 Final scoring applies scenario-appropriate weights rather than simple averaging, ensuring that the most critical aspects for each situation receive proper emphasis.
 
-## Benefits
-
-**Cost Efficiency**: 50% reduction in API costs while maintaining analysis quality
+## Features
 
 **Contextual Accuracy**: Weights adapt to scenario requirements automatically + RAG context for personalized feedback
 
