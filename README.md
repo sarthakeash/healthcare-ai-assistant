@@ -5,6 +5,7 @@ An AI-powered tool for healthcare professionals to practice patient communicatio
 ## Features
 
 - 🏥 **Practice Scenarios**: Realistic healthcare communication scenarios
+- 🎤 **Voice Input**: Speech-to-text capabilities for natural conversation practice
 - 🤖 **AI Feedback**: Detailed analysis of communication skills
 - 📊 **Progress Tracking**: Monitor improvement over time
 - 🎯 **Skill Assessment**: Evaluation across multiple dimensions:

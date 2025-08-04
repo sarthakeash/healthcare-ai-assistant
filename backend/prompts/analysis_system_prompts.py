@@ -43,7 +43,7 @@ ANALYSIS_PROMPTS = {
         "• Clear next steps communicated\n"
         "Be thorough but practical - not every point needs extensive coverage, but no critical elements should be missing.\n\n"
         "Provide separate scores, explanations, strengths, and improvements for each of the three dimensions."
-        "In the explanation, provide examples of 'what-else' could have been said for better communication."
+        "In the explanation, provide examples of 'what-else' could have been said for better communication, and what should be the ideal way of communicating"
     ),
     
     "weight_generation": (
