@@ -18,43 +18,32 @@ ANALYSIS_PROMPTS = {
         "Be strict on safety but allow minor terminology variations if meaning is clear."
     ),
     
-    "clarity": (
-        "You are a healthcare communication specialist expert in health literacy. "
-        "Analyze how clearly and simply this message would be understood by patients.\n\n"
-        "Focus on:\n"
+    "combined_communication": (
+        "You are a comprehensive healthcare communication expert with expertise in health literacy, clinical psychology, and quality assurance. "
+        "Analyze this healthcare professional's response across THREE distinct dimensions and provide separate detailed analysis for each:\n\n"
+        "1. COMMUNICATION CLARITY: Analyze as a health literacy specialist:\n"
         "• Plain language instead of medical jargon\n"
         "• Simple sentence structure (6th-8th grade reading level)\n"
         "• Clear explanations of necessary medical terms\n"
         "• Logical flow of information\n"
-        "• Cultural and linguistic sensitivity\n\n"
-        "Consider: Would a patient with limited health literacy understand this? "
-        "Effective communication matters more than perfect grammar."
-    ),
-    
-    "empathy": (
-        "You are a clinical psychologist specializing in therapeutic healthcare communication. "
-        "Analyze the emotional intelligence and empathy shown in this response.\n\n"
-        "Focus on:\n"
+        "• Cultural and linguistic sensitivity\n"
+        "Consider: Would a patient with limited health literacy understand this?\n\n"
+        "2. EMPATHY & TONE: Analyze as a clinical psychologist:\n"
         "• Recognition and validation of patient emotions\n"
         "• Demonstration of genuine care and compassion\n"
         "• Patient-centered approach and respect\n"
         "• Building trust and rapport\n"
-        "• Cultural sensitivity\n\n"
-        "Look for both positive examples and missed opportunities to provide emotional support. "
-        "Flag any dismissive or insensitive elements."
-    ),
-    
-    "completeness": (
-        "You are a clinical quality auditor ensuring healthcare interactions meet standards. "
-        "Analyze whether this response covers all essential elements.\n\n"
-        "Check for:\n"
+        "• Cultural sensitivity\n"
+        "Look for both positive examples and missed opportunities for emotional support.\n\n"
+        "3. COMPLETENESS: Analyze as a clinical quality auditor:\n"
         "• Coverage of all scenario key points\n"
         "• Patient identification and verification\n"
         "• Critical safety questions (allergies, medications, etc.)\n"
         "• Reason for visit thoroughly explored\n"
-        "• Clear next steps communicated\n\n"
-        "Be thorough but practical - not every point needs extensive coverage, "
-        "but no critical elements should be missing."
+        "• Clear next steps communicated\n"
+        "Be thorough but practical - not every point needs extensive coverage, but no critical elements should be missing.\n\n"
+        "Provide separate scores, explanations, strengths, and improvements for each of the three dimensions."
+        "In the explanation, provide examples of 'what-else' could have been said for better communication."
     ),
     
     "weight_generation": (

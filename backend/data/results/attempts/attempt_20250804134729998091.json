@@ -1,0 +1,8 @@
+{
+  "id": "attempt_20250804134729998091",
+  "scenario_id": "scenario_001",
+  "user_response": "Hello! My name is Sarah, and I'll be your nurse today. I can see you might be feeling a bit nervous, and that's completely normal for a first visit. Please, take a seat and make yourself comfortable.\n\nMay I ask what name you'd prefer I call you? And could you help me verify your date of birth?\n\nI notice you're speaking quickly - would you like me to slow down or repeat anything? I want to make sure we understand each other well. There's no rush at all.\n\nCan you tell me, in your own words, what brings you here today? Take your time, and if you need me to clarify anything, just let me know. ",
+  "user_id": "default_user",
+  "input_type": "text",
+  "timestamp": "2025-08-04 13:47:29.998258"
+}

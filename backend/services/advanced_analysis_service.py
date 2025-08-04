@@ -22,6 +22,12 @@ class ScenarioWeights(BaseModel):
     rationale: str = Field(description="Explanation for why these weights are appropriate for this scenario")
 
 
+class CombinedCommunicationAnalysis(BaseModel):
+    """Combined analysis for clarity, empathy, and completeness in a single API call"""
+    clarity: ClarityDetail = Field(description="Communication clarity analysis")
+    empathy: EmpathyDetail = Field(description="Empathy and tone analysis")
+    completeness: CompletenessDetail = Field(description="Completeness analysis")
+
 class AnalysisPipelineService:
     def __init__(self):
         self.llm = ChatOpenAI(
@@ -84,9 +90,7 @@ class AnalysisPipelineService:
             print(f"Normalized weights to sum to 1.0 (was {total})")
         
         # Cache the weights
-        self._weights_cache[cache_key] = weights
-        print(f"Weights generated - Medical: {weights.medical_accuracy:.2f}, Clarity: {weights.communication_clarity:.2f}, Empathy: {weights.empathy_tone:.2f}, Completeness: {weights.completeness:.2f}")
-        
+        self._weights_cache[cache_key] = weights        
         return weights
 
     def _create_specialist_chain(self, system_prompt: str, output_schema: Any, user_prompt_template: str):
@@ -101,10 +105,11 @@ class AnalysisPipelineService:
                                       past_feedback_exists: bool, weights: ScenarioWeights) -> FeedbackAnalysis:
         """Aggregate all analysis results into final feedback using weighted scoring"""
         medical = parallel_output['medical']
-        clarity = parallel_output['clarity'] 
-        empathy = parallel_output['empathy']
-        completeness = parallel_output['completeness']
+        combined_comm = parallel_output['combined_communication']
         passthrough = parallel_output['passthrough']
+        clarity = combined_comm.clarity
+        empathy = combined_comm.empathy
+        completeness = combined_comm.completeness
 
         # Calculate weighted overall score
         weighted_score = (
@@ -174,7 +179,7 @@ class AnalysisPipelineService:
         return rag_context
     
     def analyze_response(self, attempt_id: str, scenario: Scenario, user_response: str, user_id: str) -> FeedbackAnalysis:
-        """Main analysis method with weighted scoring system"""
+        """Main analysis method with cost-optimized weighted scoring system"""
         
         # Step 1: Generate/retrieve weights for this scenario type
         weights = self._generate_scenario_weights(scenario)
@@ -193,36 +198,23 @@ class AnalysisPipelineService:
 
         enhanced_user_prompt = rag_context + base_user_prompt
 
-        # Create parallel chains for all analysis categories
         parallel_chains = RunnableParallel(
             medical=self._create_specialist_chain(
                 system_prompt=get_analysis_system_prompt("enhanced_medical"),
                 output_schema=MedicalAccuracyDetail,
                 user_prompt_template=base_user_prompt
             ),
-            clarity=self._create_specialist_chain(
-                system_prompt=get_analysis_system_prompt("clarity"),
-                output_schema=ClarityDetail,
-                user_prompt_template=base_user_prompt
-            ),
-            empathy=self._create_specialist_chain(
-                system_prompt=get_analysis_system_prompt("empathy"),
-                output_schema=EmpathyDetail,
-                user_prompt_template=enhanced_user_prompt
-            ),
-            completeness=self._create_specialist_chain(
-                system_prompt=get_analysis_system_prompt("completeness"),
-                output_schema=CompletenessDetail,
+            combined_communication=self._create_specialist_chain(
+                system_prompt=get_analysis_system_prompt("combined_communication"),
+                output_schema=CombinedCommunicationAnalysis,
                 user_prompt_template=enhanced_user_prompt
             ),
             passthrough=RunnablePassthrough()
         )
 
-        # Create final pipeline with weighted aggregation
         full_pipeline = parallel_chains | (
             lambda x: self._aggregate_results_with_weights(x, attempt_id, rag_context != "", weights))
 
-        # Execute pipeline
         final_feedback = full_pipeline.invoke({
             "context": scenario.context,
             "key_points": ", ".join(scenario.key_points),

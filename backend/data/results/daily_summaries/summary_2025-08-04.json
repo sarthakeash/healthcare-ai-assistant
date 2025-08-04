@@ -1,7 +1,7 @@
 {
   "date": "2025-08-04",
-  "total_attempts": 16,
-  "average_score": 3.54,
+  "total_attempts": 17,
+  "average_score": 3.87,
   "attempts": [
     {
       "attempt_id": "attempt_20250804002956248377",
@@ -98,10 +98,16 @@
       "scenario_id": "scenario_001",
       "score": 1.85,
       "timestamp": "2025-08-04T13:38:06.364318"
+    },
+    {
+      "attempt_id": "attempt_20250804134729998091",
+      "scenario_id": "scenario_001",
+      "score": 9.15,
+      "timestamp": "2025-08-04T13:47:55.164943"
     }
   ],
   "scenarios_practiced": {
-    "scenario_001": 11,
+    "scenario_001": 12,
     "scenario_002": 2,
     "scenario_003": 3
   }
