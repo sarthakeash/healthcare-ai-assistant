@@ -1,5 +1,3 @@
-# My AI Pipeline Approach
-
 ```mermaid
 graph TD
     A[User Response + Scenario] --> B[Check Weights Cache]
@@ -21,33 +19,6 @@ graph TD
     K --> L
     
     L --> M[Final Feedback Analysis]
-    
-    subgraph "Weight Generation"
-        N[Emergency → Medical 0.5]
-        O[Education → Clarity 0.4]
-        P[Anxious Patient → Empathy 0.4]
-        Q[Complex → Completeness 0.4]
-    end
-    
-    subgraph "Enhanced Medical Chain"
-        R[Step 1: Establish Standards]
-        S[Step 2: Evaluate Response]
-        R --> S
-    end
-    
-    subgraph "Combined Communication Chain"
-        T[Clarity Analysis]
-        U[Empathy Analysis]
-        V[Completeness Analysis]
-        T -.-> W[Single API Call]
-        U -.-> W
-        V -.-> W
-    end
-    
-    subgraph "Cost Optimization"
-        X[4 Chains → 2 Chains]
-        Y[50% API Cost Reduction]
-    end
     
     style A fill:#e1f5fe
     style D fill:#fff3e0
