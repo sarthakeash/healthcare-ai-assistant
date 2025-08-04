@@ -28,7 +28,6 @@ def get_next_scenario_id():
 
 def generate_scenario(difficulty: str, department: str, patient_type: str) -> Scenario:
     print("Initializing AI model to generate scenario...")
-    
     llm = ChatOpenAI(
         model=settings.llm_model,
         api_key=settings.gemini_api_key,

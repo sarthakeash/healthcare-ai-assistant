@@ -1,0 +1,18 @@
+{
+    "id": "scenario_005",
+    "title": "Addressing Medication Side Effect Concerns in an Anxious Patient",
+    "description": "Engage with an anxious patient regarding concerns about medication side effects, provide accurate information, alleviate fears, and promote treatment adherence.",
+    "context": "Mr. David Miller, a 62-year-old patient, has recently been diagnosed with hypertension and started on a new ACE inhibitor (e.g., lisinopril). He arrives for his follow-up appointment visibly anxious, stating he's read extensively online about the medication's potential side effects, including a persistent cough and angioedema. He expresses significant hesitation about continuing the medication due to these fears, despite understanding the importance of blood pressure control. Your goal is to address his anxieties, provide accurate information about the medication, manage his expectations regarding side effects, and ensure his adherence to the prescribed treatment plan.",
+    "difficulty": "intermediate",
+    "medical_area": "Cardiology",
+    "patient_type": "Anxious patient worried about medication side effects",
+    "key_points": [
+        "Acknowledge and validate the patient's anxiety and concerns.",
+        "Actively listen to understand the specific fears and sources of information (e.g., internet).",
+        "Provide clear, concise, and accurate information about common and serious side effects, distinguishing between them.",
+        "Address misinformation or exaggerated fears empathetically.",
+        "Explain the benefits of the medication in managing his condition and the risks of non-adherence.",
+        "Discuss strategies for managing common, mild side effects (e.g., dry cough) and when to seek immediate medical attention.",
+        "Reassure the patient and build trust to encourage adherence to the treatment plan."
+    ]
+}

@@ -179,8 +179,10 @@ python backend/scripts/generate_scenario.py --difficulty beginner --department "
 
 **Example Commands:**
 ```bash
-# Generate a beginner pediatric scenario
-python backend/scripts/generate_scenario.py --difficulty beginner --department "Pediatrics" --patient "A worried mother with a toddler who won't eat"
+# Generate a beginner pediatric scenario 
+source bin/activate
+cd backend
+python scripts/generate_scenario.py --difficulty beginner --department "Pediatrics" --patient "A worried mother with a toddler who won't eat"
 ```
 
 The script automatically assigns sequential scenario IDs and saves the generated scenarios to `backend/data/scenarios/` for immediate use in the training platform.
